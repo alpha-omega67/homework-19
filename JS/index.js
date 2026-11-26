@@ -17,3 +17,32 @@ const cartProducts = cart.map((el) => {
 });
 
 console.log(cartProducts);
+
+const allExist = cartProducts.every((el) => {
+  return el !== undefined;
+});
+
+console.log(allExist);
+
+const allInStock =
+  allExist &&
+  cartProducts.every((el) => {
+    return el.inStock === true;
+  });
+
+console.log(allInStock);
+
+if (allExist === false) {
+  console.log("Товар не существует");
+} else if (allInStock === false) {
+  console.log("Товар отсутствует на складе");
+} else {
+  console.log("Заказ принят");
+  const hasTech = cartProducts.some((el) => {
+    return el.category === "tech";
+  });
+
+  console.log(hasTech);
+}
+
+
