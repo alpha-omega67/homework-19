@@ -17,3 +17,20 @@ const cartProducts = cart.map((id) => {
 // {} - Элементы и объекты, [] - массивы
 
 console.log(cartProducts);
+
+const missingProducts = cartProducts.some((el) => el === undefined);
+
+console.log(missingProducts);
+
+// missingProducts === false ;
+
+if (missingProducts) {
+  // missingProducts === true
+  console.log("Некоторые товары отстутствуют");
+}
+
+const productInStock = cartProducts.every((el) => el.inStock === true);
+
+console.log(productInStock);
+
+
