@@ -9,3 +9,11 @@ const products = [
 ];
 
 const cart = [2, 4, 5, 7];
+
+const cartProducts = cart.map((el) => {
+  return products.find((product) => {
+    return product.id === el;
+  });
+});
+
+console.log(cartProducts);
