@@ -33,4 +33,17 @@ const productInStock = cartProducts.every((el) => el.inStock === true);
 
 console.log(productInStock);
 
+const isCategory = cartProducts.some((el) => el.category === "tech");
 
+console.log(isCategory);
+
+const discounProducts = cartProducts.map((el) => {
+  let finalPrice = el.price;
+  if (el.category === "tech") {
+    finalPrice = el.price * 0.85;
+  }
+
+  return { ...el, finalPrice: finalPrice }; // возвращаю свой объект и добавляю к нему новый элемент
+});
+
+console.log(discounProducts);
