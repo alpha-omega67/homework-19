@@ -63,3 +63,12 @@ const sumDiscount = discounProducts.reduce((sum, product) => {
 }, 0);
 
 console.log(sumDiscount);
+
+const maxPrice = cartProducts.reduce((acc, product) => {
+  if (product.price > acc.price) {
+    return product;
+  }
+  return acc;
+}, cartProducts[0]);
+
+console.log(maxPrice);
