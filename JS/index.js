@@ -47,3 +47,19 @@ const discounProducts = cartProducts.map((el) => {
 });
 
 console.log(discounProducts);
+
+const sumPrice = cartProducts.reduce((sum, product) => {
+  //первое, что идёт в скобке в редьюс - начальное значение, которое идёт после фигурной скобки через запятую
+  //второе, элемент массива
+  //третье - индекс (0, 1, 2)
+
+  return sum + product.price;
+}, 0);
+
+console.log(`Общая сумма заказа ${sumPrice}`);
+
+const sumDiscount = discounProducts.reduce((sum, product) => {
+  return sum + product.finalPrice;
+}, 0);
+
+console.log(sumDiscount);
