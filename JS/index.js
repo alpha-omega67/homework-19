@@ -72,3 +72,15 @@ const maxPrice = cartProducts.reduce((acc, product) => {
 }, cartProducts[0]);
 
 console.log(maxPrice);
+
+let deliveryPrice = 2000;
+
+if (sumDiscount >= 50000) {
+  deliveryPrice = 0;
+}
+
+console.log(`Доставка будет стоить ${deliveryPrice} тг.`);
+
+const saving = sumPrice - sumDiscount;
+
+console.log(`Вы экономите ${saving}`);
