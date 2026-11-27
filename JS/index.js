@@ -84,3 +84,28 @@ console.log(`Доставка будет стоить ${deliveryPrice} тг.`);
 const saving = sumPrice - sumDiscount;
 
 console.log(`Вы экономите ${saving}`);
+
+const totalPrice = sumDiscount + deliveryPrice;
+
+console.log(`Итого к оплате ${totalPrice} тг.`);
+
+discounProducts.forEach((el) => {
+  console.log(el.name);
+  console.log(el.price);
+
+  if (el.price > el.finalPrice) {
+    console.log(el.finalPrice);
+  }
+});
+
+console.log(`Количество товаров: ${cartProducts.length}`);
+console.log(`Стоимость без скидки: ${sumPrice} ₸`);
+console.log(`Ваша экономия: ${saving} ₸`);
+if (deliveryPrice === 0) {
+  console.log("Доставка: Бесплатно");
+} else {
+  console.log(`Доставка: ${deliveryPrice} ₸`);
+}
+
+console.log(`Самый дорогой товар: ${maxPrice.name}`);
+console.log(`Итого к оплате: ${totalPrice} ₸`);
